@@ -23,9 +23,9 @@ namespace AuthenticatieService
                 // an instance of the class is created in this host process.
 
                 ServiceRuntime.RegisterServiceAsync("AuthenticatieServiceType",
-                    context => new AuthenticatieService(context, new TokenValidator())).GetAwaiter().GetResult();
+                    context => new AuthenticatieServiceEndpoint(context, new TokenValidator())).GetAwaiter().GetResult();
 
-                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(AuthenticatieService).Name);
+                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(AuthenticatieServiceEndpoint).Name);
 
                 // Prevents this host process from terminating so services keep running.
                 Thread.Sleep(Timeout.Infinite);

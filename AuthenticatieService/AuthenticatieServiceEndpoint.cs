@@ -12,11 +12,11 @@ using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace AuthenticatieService
 {
-    internal sealed class AuthenticatieService : StatelessService, IAuthenticatieService
+    internal sealed class AuthenticatieServiceEndpoint : StatelessService, IAuthenticatieService
     {
         private readonly ITokenValidator _validator;
 
-        public AuthenticatieService(StatelessServiceContext context, ITokenValidator validator)
+        public AuthenticatieServiceEndpoint(StatelessServiceContext context, ITokenValidator validator)
             : base(context)
         {
             _validator = validator;
