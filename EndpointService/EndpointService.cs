@@ -5,10 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AuthenticatieService.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
+using Microsoft.ServiceFabric.Services.Remoting.Client;
 using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace EndpointService
@@ -31,8 +33,16 @@ namespace EndpointService
                         return new WebHostBuilder()
                                     .UseKestrel()
                                     .ConfigureServices(
-                                        services => services
-                                            .AddSingleton<StatelessServiceContext>(serviceContext))
+                                        services => {
+                                            services.AddSingleton(serviceContext);
+                                            //services.AddScoped(
+                                            //    service => ServiceProxy.Create<IRollsService>(new Uri("fabric:/CentralePremieServer/RollsService"))
+                                            //);
+                                            services.AddScoped(
+                                                service => ServiceProxy.Create<IAuthenticatieService>(new Uri("fabric:/PremiePrototype/AuthenticatieService"))
+                                            );
+                                        }
+                                    )
                                     .UseContentRoot(Directory.GetCurrentDirectory())
                                     .UseStartup<Startup>()
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)

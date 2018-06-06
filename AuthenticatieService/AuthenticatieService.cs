@@ -24,7 +24,13 @@ namespace AuthenticatieService
 
         public Task<bool> IsTokenValid(string authenticationHeader)
         {
-            return Task.FromResult(_validator.ValidateToken(authenticationHeader));
+            if (!String.IsNullOrEmpty(authenticationHeader))
+            {
+                Thread.Sleep(6000);
+                return Task.FromResult(_validator.ValidateToken(authenticationHeader));
+            }
+            
+           return Task.FromResult(true); 
         }
 
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
