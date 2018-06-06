@@ -34,6 +34,13 @@ namespace EndpointService
                                     .UseKestrel()
                                     .ConfigureServices(
                                         services => {
+                                            //TODO: Still need to add the following service with more then 80% tests
+                                            //      - LicentieService (Default URL)
+                                            //      - VPIService
+                                            //      - RollsService
+                                            //      - InternePremieService
+                                            //      - PremieDataService
+
                                             services.AddSingleton(serviceContext);
                                             //services.AddScoped(
                                             //    service => ServiceProxy.Create<IRollsService>(new Uri("fabric:/CentralePremieServer/RollsService"))

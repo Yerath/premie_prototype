@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Fabric;
 using System.Linq;
 using System.Threading;
@@ -12,7 +13,7 @@ using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace AuthenticatieService
 {
-    internal sealed class AuthenticatieServiceEndpoint : StatelessService, IAuthenticatieService
+    public sealed class AuthenticatieServiceEndpoint : StatelessService, IAuthenticatieService
     {
         private readonly ITokenValidator _validator;
 
@@ -26,13 +27,13 @@ namespace AuthenticatieService
         {
             if (!String.IsNullOrEmpty(authenticationHeader))
             {
-                Thread.Sleep(6000);
                 return Task.FromResult(_validator.ValidateToken(authenticationHeader));
             }
             
-           return Task.FromResult(true); 
+           return Task.FromResult(false); 
         }
 
+        [ExcludeFromCodeCoverage]
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
         {
             return this.CreateServiceRemotingInstanceListeners();
