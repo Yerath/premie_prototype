@@ -18,6 +18,9 @@ namespace EndpointService.Middleware
 
         public Task InvokeAsync(HttpContext context)
         {
+            //TODO: Create my own _next then it should work
+        
+
             var authenticationHeader = context.Request.Headers["Authorization"].ToString();
 
             if (_service.IsTokenValid(authenticationHeader).Result)

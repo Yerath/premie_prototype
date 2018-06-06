@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Fabric;
 using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using AuthenticatieService.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +13,7 @@ using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace EndpointService
 {
+    [ExcludeFromCodeCoverage]
     internal sealed class EndpointService : StatelessService
     {
         public EndpointService(StatelessServiceContext context)

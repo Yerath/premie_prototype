@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Fabric;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using AuthenticatieService.Interfaces;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Remoting.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;

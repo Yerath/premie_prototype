@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Fabric;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
-using System.Threading.Tasks;
 using AuthenticatieService.Controllers;
 using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace AuthenticatieService
 {
+    [ExcludeFromCodeCoverage]
     internal static class Program
     {
         /// <summary>
