@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Fabric;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using LicentieService.Interfaces;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
@@ -15,11 +13,12 @@ namespace LicentieService
     public sealed class LicentieServiceEndpoint : StatelessService, ILicentieService
     {
         private readonly ILicentieController _controller;
-        private StatelessServiceContext context;
+        private readonly StatelessServiceContext _context;
 
         public LicentieServiceEndpoint(StatelessServiceContext context, ILicentieController controller)
             : base(context)
         {
+            _context = context;
             _controller = controller;
         }
 
@@ -31,7 +30,7 @@ namespace LicentieService
             }
             catch (Exception e)
             {
-                Console.WriteLine(e + " Thrown by LicentieService : " + context.InstanceId);
+                Console.WriteLine(e + " Thrown by LicentieService : " + _context.InstanceId);
                 throw;
             }
         }

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Fabric;
 using System.Threading;
-using System.Threading.Tasks;
 using LicentieService.Agents;
 using LicentieService.Controllers;
-using LicentieService.Interfaces;
 using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace LicentieService

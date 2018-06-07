@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using LicentieService.Exceptions;
+﻿using LicentieService.Exceptions;
 using LicentieService.Interfaces;
 
 namespace LicentieService.Controllers

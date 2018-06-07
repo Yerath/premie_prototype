@@ -12,7 +12,8 @@ internal sealed class ServiceEventSource : EventSource
     public static readonly ServiceEventSource Current = new ServiceEventSource();
 
     // Instance constructor is private to enforce singleton semantics
-    private ServiceEventSource() : base() { }
+    private ServiceEventSource()
+    { }
 
     #region Keywords
     // Event keywords can be used to categorize events. 
@@ -37,7 +38,7 @@ internal sealed class ServiceEventSource : EventSource
     [NonEvent]
     public void Message(string message, params object[] args)
     {
-        if (this.IsEnabled())
+        if (IsEnabled())
         {
             string finalMessage = string.Format(message, args);
             Message(finalMessage);
@@ -48,7 +49,7 @@ internal sealed class ServiceEventSource : EventSource
     [Event(MessageEventId, Level = EventLevel.Informational, Message = "{0}")]
     public void Message(string message)
     {
-        if (this.IsEnabled())
+        if (IsEnabled())
         {
             WriteEvent(MessageEventId, message);
         }
@@ -57,7 +58,7 @@ internal sealed class ServiceEventSource : EventSource
     [NonEvent]
     public void ServiceMessage(StatelessServiceContext serviceContext, string message, params object[] args)
     {
-        if (this.IsEnabled())
+        if (IsEnabled())
         {
             string finalMessage = string.Format(message, args);
             ServiceMessage(

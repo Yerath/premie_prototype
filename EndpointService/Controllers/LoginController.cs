@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 using LicentieService.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Web;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 namespace EndpointService.Controllers
 {
@@ -35,7 +29,7 @@ namespace EndpointService.Controllers
             {
                 return Content(_service.Login(username, password).Result);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Response.StatusCode = 404;
                 Response.WriteAsync("Username/Password not found");

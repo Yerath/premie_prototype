@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -11,7 +10,7 @@ namespace LicentieService.Agents
 {
     public class LicentieAgent : ILicentieAgent
     {
-        private Dictionary<string, string> _knownUsers;
+        private readonly Dictionary<string, string> _knownUsers;
 
         public LicentieAgent()
         {
