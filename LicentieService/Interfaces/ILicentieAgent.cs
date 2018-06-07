@@ -2,7 +2,6 @@
 {
     internal interface ILicentieAgent
     {
-        bool IsKnownUser(string username, string password);
-        string GenerateToken();
+        string RetrieveToken(string username, string password);
     }
 }

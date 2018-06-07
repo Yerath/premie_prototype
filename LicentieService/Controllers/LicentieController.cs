@@ -1,4 +1,5 @@
-﻿using LicentieService.Exceptions;
+﻿using System;
+using LicentieService.Exceptions;
 using LicentieService.Interfaces;
 
 namespace LicentieService.Controllers
@@ -14,12 +15,15 @@ namespace LicentieService.Controllers
 
         public string Login(string username, string password)
         {
-            if (!_agent.IsKnownUser(username, password))
+            try
             {
-                throw new InvalidUserException("Username / Password not found in database");
+                return _agent.RetrieveToken(username, password);
             }
-
-            return _agent.GenerateToken();   
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }

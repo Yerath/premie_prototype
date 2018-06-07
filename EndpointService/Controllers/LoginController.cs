@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using LicentieService.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
@@ -18,6 +19,7 @@ namespace EndpointService.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            Thread.Sleep(6000);
             return Content("PremiePrototype is functioning normally");
         }
 
