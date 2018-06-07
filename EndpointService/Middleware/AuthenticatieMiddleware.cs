@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 using AuthenticatieService.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -16,22 +17,22 @@ namespace EndpointService.Middleware
             _service = service;
         }
 
+        //Made HttpContext a out variable for testing. 
         public Task InvokeAsync(HttpContext context)
-        {
-            //TODO: Create my own _next then it should work
-        
-
+        {   
             var authenticationHeader = context.Request.Headers["Authorization"].ToString();
-
-            if (_service.IsTokenValid(authenticationHeader).Result)
-                return _next(context);
-
-            context.Response.StatusCode = 401;
-            return context.Response.WriteAsync("Invalid Token");
+            if (!_service.IsTokenValid(authenticationHeader).Result)
+            {
+                context.Response.StatusCode = 401;
+                return context.Response.WriteAsync("Invalid Token");
+            }
+            return _next(context);
         }
     }
 
     #region ExtensionMethod
+    //TODO: Find a way to test this. Extension method's are unfriendly for testing. But necessary in this context.
+    [ExcludeFromCodeCoverage]
     public static class AuthenticatieMiddlewareExtension
     {
         public static IApplicationBuilder EnableAuthenticatieMiddleware(this IApplicationBuilder app)

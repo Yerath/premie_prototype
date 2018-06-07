@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticatieService", "Aut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticatieServiceTests", "AuthenticatieServiceTests\AuthenticatieServiceTests.csproj", "{3DC6187B-C518-4A63-A16B-C2C24C6AF670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndpointServiceTests", "EndpointServiceTests\EndpointServiceTests.csproj", "{BB722E66-695B-45CC-8E24-B4E1D992DB87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndpointServiceTests", "EndpointServiceTests\EndpointServiceTests.csproj", "{BB722E66-695B-45CC-8E24-B4E1D992DB87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DE569A53-976D-4E06-9F90-BA74AE31CBD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicentieService", "LicentieService\LicentieService.csproj", "{05E7104C-D307-4DDE-9B29-678482698BF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,14 @@ Global
 		{BB722E66-695B-45CC-8E24-B4E1D992DB87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB722E66-695B-45CC-8E24-B4E1D992DB87}.Release|x64.ActiveCfg = Release|Any CPU
 		{BB722E66-695B-45CC-8E24-B4E1D992DB87}.Release|x64.Build.0 = Release|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Debug|x64.Build.0 = Debug|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Release|x64.ActiveCfg = Release|Any CPU
+		{05E7104C-D307-4DDE-9B29-678482698BF0}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthenticatieService\AuthenticatieService.csproj" />
+    <ProjectReference Include="..\EndpointService\EndpointService.csproj" />
   </ItemGroup>
 
   <ItemGroup>

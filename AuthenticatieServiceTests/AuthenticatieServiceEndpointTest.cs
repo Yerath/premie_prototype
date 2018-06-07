@@ -3,6 +3,7 @@ using System.Fabric;
 using System.Numerics;
 using AuthenticatieService;
 using AuthenticatieService.Interfaces;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Shouldly;
@@ -14,6 +15,7 @@ namespace AuthenticatieServiceTests
     {
         private AuthenticatieServiceEndpoint _sut;
         private Mock<ITokenValidator> _validatorMock;
+
 
         [TestInitialize]
         public void Initialize()
@@ -54,5 +56,6 @@ namespace AuthenticatieServiceTests
             _validatorMock.Verify(f => f.ValidateToken(""), Times.Never);
             result.Result.ShouldBeFalse();
         }
+
     }
 }
