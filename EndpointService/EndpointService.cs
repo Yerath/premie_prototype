@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Fabric;
 using System.IO;
 using AuthenticatieService.Interfaces;
+using LicentieService.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
@@ -34,18 +35,17 @@ namespace EndpointService
                                     .ConfigureServices(
                                         services => {
                                             //TODO: Still need to add the following service with more then 80% tests
-                                            //      - LicentieService (Default URL)
                                             //      - VPIService
                                             //      - RollsService
                                             //      - InternePremieService
                                             //      - PremieDataService
 
                                             services.AddSingleton(serviceContext);
-                                            //services.AddScoped(
-                                            //    service => ServiceProxy.Create<IRollsService>(new Uri("fabric:/CentralePremieServer/RollsService"))
-                                            //);
                                             services.AddScoped(
                                                 service => ServiceProxy.Create<IAuthenticatieService>(new Uri("fabric:/PremiePrototype/AuthenticatieService"))
+                                            );
+                                            services.AddScoped(
+                                                service => ServiceProxy.Create<ILicentieService>(new Uri("fabric:/PremiePrototype/LicentieService"))
                                             );
                                         }
                                     )
