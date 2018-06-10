@@ -4,7 +4,7 @@ using LicentieService.Interfaces;
 
 namespace LicentieService.Controllers
 {
-    internal class LicentieController : ILicentieController
+    public class LicentieController : ILicentieController
     {
         private readonly ILicentieAgent _agent;
 

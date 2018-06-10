@@ -11,6 +11,7 @@ using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using Microsoft.ServiceFabric.Services.Runtime;
+using RollsService.Interfaces;
 
 namespace EndpointService
 {
@@ -36,7 +37,6 @@ namespace EndpointService
                                         services => {
                                             //TODO: Still need to add the following service with more then 80% tests
                                             //      - VPIService
-                                            //      - RollsService
                                             //      - InternePremieService
                                             //      - PremieDataService
 
@@ -46,6 +46,9 @@ namespace EndpointService
                                             );
                                             services.AddScoped(
                                                 service => ServiceProxy.Create<ILicentieService>(new Uri("fabric:/PremiePrototype/LicentieService"))
+                                            );
+                                            services.AddScoped(
+                                                service => ServiceProxy.Create<IRollsService>(new Uri("fabric:/PremiePrototype/RollsService"))
                                             );
                                         }
                                     )

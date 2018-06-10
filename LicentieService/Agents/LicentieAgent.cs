@@ -30,7 +30,7 @@ namespace LicentieService.Agents
                 return GenerateToken();
             }
 
-            throw new InvalidUserException();
+            throw new InvalidUserException("User not found");
         }
 
         private string GenerateToken()

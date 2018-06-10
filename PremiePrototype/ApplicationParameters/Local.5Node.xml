@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/PremiePrototype" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
+    <Parameter Name="RollsService_InstanceCount" Value="1" />
     <Parameter Name="LicentieService_InstanceCount" Value="1" />
     <Parameter Name="AuthenticatieService_InstanceCount" Value="1" />
     <Parameter Name="EndpointService_InstanceCount" Value="1" />

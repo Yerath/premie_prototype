@@ -33,9 +33,7 @@ namespace EndpointService.Controllers
             }
             catch (Exception)
             {
-                Response.StatusCode = 404;
-                Response.WriteAsync("Username/Password not found");
-                return BadRequest();
+                return NotFound();
             }
         }
     }
