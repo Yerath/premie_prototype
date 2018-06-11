@@ -1,17 +1,16 @@
-﻿using System;
+using System;
 using System.Diagnostics;
-using System.Fabric;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
-using System.Threading.Tasks;
+using LicentieService.Agents;
+using LicentieService.Controllers;
 using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace LicentieService
 {
+    [ExcludeFromCodeCoverage]
     internal static class Program
     {
-        /// <summary>
-        /// This is the entry point of the service host process.
-        /// </summary>
         private static void Main()
         {
             try
@@ -21,10 +20,12 @@ namespace LicentieService
                 // When Service Fabric creates an instance of this service type,
                 // an instance of the class is created in this host process.
 
+                var agent = new LicentieAgent();
+                var controller = new LicentieController(agent);
                 ServiceRuntime.RegisterServiceAsync("LicentieServiceType",
-                    context => new LicentieService(context)).GetAwaiter().GetResult();
+                    context => new LicentieServiceEndpoint(context,controller)).GetAwaiter().GetResult();
 
-                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(LicentieService).Name);
+                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(LicentieServiceEndpoint).Name);
 
                 // Prevents this host process from terminating so services keep running.
                 Thread.Sleep(Timeout.Infinite);

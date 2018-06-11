@@ -19,13 +19,17 @@ namespace EndpointService.Middleware
 
         //Made HttpContext a out variable for testing. 
         public Task InvokeAsync(HttpContext context)
-        {   
+        {
             var authenticationHeader = context.Request.Headers["Authorization"].ToString();
-            if (!_service.IsTokenValid(authenticationHeader).Result)
+            if (!context.Request.Path.StartsWithSegments("/login"))
             {
-                context.Response.StatusCode = 401;
-                return context.Response.WriteAsync("Invalid Token");
+                if (!_service.IsTokenValid(authenticationHeader).Result)
+                {
+                    context.Response.StatusCode = 401;
+                    return context.Response.WriteAsync("Invalid Token");
+                }
             }
+           
             return _next(context);
         }
     }

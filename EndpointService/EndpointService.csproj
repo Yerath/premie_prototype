@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <Compile Remove="Interfaces\**" />
+    <Content Remove="Interfaces\**" />
+    <EmbeddedResource Remove="Interfaces\**" />
+    <None Remove="Interfaces\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -18,6 +24,7 @@
     <PackageReference Include="Microsoft.ServiceFabric.Data" Version="3.1.283" />
     <PackageReference Include="Microsoft.ServiceFabric.Services" Version="3.1.283" />
     <PackageReference Include="Microsoft.ServiceFabric.Services.Remoting" Version="3.1.283" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +33,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthenticatieService\AuthenticatieService.csproj" />
+    <ProjectReference Include="..\LicentieService\LicentieService.csproj" />
+    <ProjectReference Include="..\RollsService\RollsService.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,4 +7,25 @@
     <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel" Version="6.1.7600.16394" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="5.2.2" />
+    <PackageReference Include="Microsoft.ServiceFabric" Version="6.2.283" />
+    <PackageReference Include="Microsoft.ServiceFabric.Data" Version="3.1.283" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="3.1.283" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services.Remoting" Version="3.1.283" />
+    <PackageReference Include="Moq" Version="4.8.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Shouldly" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens\5.1.4\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\system.identitymodel.tokens.jwt\5.1.4\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

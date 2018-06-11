@@ -34,6 +34,8 @@
   <ItemGroup>
     <ProjectReference Include="..\AuthenticatieService\AuthenticatieService.csproj" />
     <ProjectReference Include="..\EndpointService\EndpointService.csproj" />
+    <ProjectReference Include="..\LicentieService\LicentieService.csproj" />
+    <ProjectReference Include="..\RollsService\RollsService.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>

@@ -18,7 +18,8 @@ namespace EndpointService
         }
 
         // Instance constructor is private to enforce singleton semantics
-        private ServiceEventSource() : base() { }
+        private ServiceEventSource()
+        { }
 
         #region Keywords
         // Event keywords can be used to categorize events. 
@@ -43,7 +44,7 @@ namespace EndpointService
         [NonEvent]
         public void Message(string message, params object[] args)
         {
-            if (this.IsEnabled())
+            if (IsEnabled())
             {
                 string finalMessage = string.Format(message, args);
                 Message(finalMessage);
@@ -54,7 +55,7 @@ namespace EndpointService
         [Event(MessageEventId, Level = EventLevel.Informational, Message = "{0}")]
         public void Message(string message)
         {
-            if (this.IsEnabled())
+            if (IsEnabled())
             {
                 WriteEvent(MessageEventId, message);
             }
@@ -63,7 +64,7 @@ namespace EndpointService
         [NonEvent]
         public void ServiceMessage(ServiceContext serviceContext, string message, params object[] args)
         {
-            if (this.IsEnabled())
+            if (IsEnabled())
             {
 
                 string finalMessage = string.Format(message, args);
@@ -154,14 +155,12 @@ namespace EndpointService
         #region Private methods
         private static long GetReplicaOrInstanceId(ServiceContext context)
         {
-            StatelessServiceContext stateless = context as StatelessServiceContext;
-            if (stateless != null)
+            if (context is StatelessServiceContext stateless)
             {
                 return stateless.InstanceId;
             }
 
-            StatefulServiceContext stateful = context as StatefulServiceContext;
-            if (stateful != null)
+            if (context is StatefulServiceContext stateful)
             {
                 return stateful.ReplicaId;
             }

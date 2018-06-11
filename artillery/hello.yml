@@ -1,0 +1,10 @@
+config:
+  target: 'http://localhost:8456/login'
+  phases:
+    - duration: 60
+      arrivalRate: 600
+  defaults:
+scenarios:
+  - flow:
+    - get:
+        url: "/docs"
