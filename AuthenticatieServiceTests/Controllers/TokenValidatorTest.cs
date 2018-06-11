@@ -25,6 +25,8 @@ namespace AuthenticatieServiceTests.Controllers
         public void TokenValidatorShouldReturnTrueWhenSignatureAndIssuerAreValid()
         {
             var token = createTokenString("qwertyuiopasdfghjklzxcvbnm123456", "UNIT4");
+            //var token =
+            //    "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJVTklUNCJ9.QXtZsYJvr0hXy8k4o56YqdW2zmX9b_FRdK84J-rYdv0";
             var result = _sut.ValidateToken(token);
 
             result.ShouldBeTrue();

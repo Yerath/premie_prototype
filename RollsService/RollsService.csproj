@@ -14,10 +14,4 @@
     <PackageReference Include="Microsoft.ServiceFabric.Services.Remoting" Version="3.1.283" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Agents\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Entities\" />
-  </ItemGroup>
-
 </Project>

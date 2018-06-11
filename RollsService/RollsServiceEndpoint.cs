@@ -8,18 +8,25 @@ using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Remoting.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
+using RollsService.Entities;
 using RollsService.Interfaces;
 
 namespace RollsService
 {
-    /// <summary>
-    /// An instance of this class is created for each service instance by the Service Fabric runtime.
-    /// </summary>
-    internal sealed class RollsServiceEndpoint : StatelessService, IRollsService
+    public sealed class RollsServiceEndpoint : StatelessService, IRollsService
     {
-        public RollsServiceEndpoint(StatelessServiceContext context)
+        private readonly IRollsController _controller;
+
+        public RollsServiceEndpoint(StatelessServiceContext context, IRollsController controller)
             : base(context)
-        { }
+        {
+            _controller = controller;
+        }
+
+        public Task<PersonenautoWAMiniCasco> BerekenPremiePersonenAutoWAMiniCasco(string bsn, DateTime verjaardag, string kenteken)
+        {
+            return Task.FromResult(_controller.BerekenPremiePersonenAutoWAMiniCasco(bsn, verjaardag, kenteken)); 
+        }
 
         [ExcludeFromCodeCoverage]
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()

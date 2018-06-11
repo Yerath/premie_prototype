@@ -17,7 +17,7 @@ namespace EndpointService.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public IActionResult Index()
         {
             Thread.Sleep(6000);
             return Content("PremiePrototype is functioning normally");
@@ -25,7 +25,7 @@ namespace EndpointService.Controllers
 
         // POST login
         [HttpPost]
-        public ActionResult Post(string username, string password)
+        public IActionResult Post(string username, string password)
         {
             try
             {

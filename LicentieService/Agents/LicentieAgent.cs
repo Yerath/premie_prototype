@@ -36,13 +36,14 @@ namespace LicentieService.Agents
         private string GenerateToken()
         {
             var credentials = new SigningCredentials
-                (new SymmetricSecurityKey(Encoding.UTF8.GetBytes("qwertyuiopasdfghjretfxcvbnm123456")), SecurityAlgorithms.HmacSha256Signature);
+                (new SymmetricSecurityKey(Encoding.UTF8.GetBytes("qwertyuiopasdfghjklzxcvbnm123456")), SecurityAlgorithms.HmacSha256Signature);
 
             var header = new JwtHeader(credentials);
             var claims = new List<Claim>
             {
                 new Claim("iss", "UNIT4", ClaimValueTypes.String)
             };
+
 
             var payload = new JwtPayload(claims);
 
