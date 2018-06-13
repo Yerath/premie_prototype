@@ -20,7 +20,7 @@ namespace LicentieServiceTests.Agents
         public void RetrieveTokenShouldReturnTokenIfUserIsKnow()
         {
             var result = _sut.RetrieveToken("dimitry", "volker");
-            result.ShouldBe("eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJVTklUNCJ9.QXtZsYJvr0hXy8k4o56YqdW2zmX9b_FRdK84J-rYdv0");
+            result.ShouldBe("eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJVTklUNCJ9.5G98Zgd6o3X5BQ08P3nFfdRfsvMJOvAT98xpih1rB1c");
         }
 
         [TestMethod]

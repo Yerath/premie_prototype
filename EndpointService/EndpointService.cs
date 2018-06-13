@@ -12,7 +12,7 @@ using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using Microsoft.ServiceFabric.Services.Runtime;
 using RollsService.Interfaces;
-using VPIService;
+using VPIService.Interfaces;
 
 namespace EndpointService
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Fabric;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using RollsService.Controllers;
 
 namespace RollsService
 {
+    [ExcludeFromCodeCoverage]
     internal static class Program
     {
         private static void Main()

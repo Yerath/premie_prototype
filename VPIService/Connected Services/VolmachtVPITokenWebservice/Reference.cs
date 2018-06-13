@@ -11,8 +11,11 @@
 namespace VPIService.VolmachtVPITokenWebservice {
     using System.Runtime.Serialization;
     using System;
-    
-    
+
+
+    using System.Diagnostics.CodeAnalysis;
+
+    [ExcludeFromCodeCoverage]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CasResult", Namespace="http://www.colimbra.net/cas/")]

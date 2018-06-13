@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Tracing;
 using System.Fabric;
 using System.Linq;
@@ -9,6 +10,7 @@ using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace RollsService
 {
+    [ExcludeFromCodeCoverage]
     [EventSource(Name = "MyCompany-PremiePrototype-RollsService")]
 internal sealed class ServiceEventSource : EventSource
 {

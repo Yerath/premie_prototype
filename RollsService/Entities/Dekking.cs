@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace RollsService.Entities
 {
     [Serializable]
+    [ExcludeFromCodeCoverage]
     public class Dekking
     {
         public string DekkingCode { get; set; }

@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Tracing;
 using System.Fabric;
 using System.Threading.Tasks;
 
 namespace VPIService
 {
+    [ExcludeFromCodeCoverage]
     [EventSource(Name = "MyCompany-CentralePremieServer-VPIService")]
     internal sealed class ServiceEventSource : EventSource
     {
