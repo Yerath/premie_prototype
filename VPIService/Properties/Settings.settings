@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VPIService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="VPI_appKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">vpi_at_unit4_Rx8yTM</Value>
+    </Setting>
+    <Setting Name="VPI_username" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">VPI-TESTUnit4</Value>
+    </Setting>
+    <Setting Name="VPI_password" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TESTUnit4123#</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

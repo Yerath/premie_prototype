@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LicentieService", "Licentie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LicentieServiceTests", "LicentieServiceTests\LicentieServiceTests.csproj", "{147853AD-2B54-4597-AC83-ADC85CB7F1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollsService", "RollsService\RollsService.csproj", "{A1A4831F-AF6C-412C-BB13-50F9B8943F0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RollsService", "RollsService\RollsService.csproj", "{A1A4831F-AF6C-412C-BB13-50F9B8943F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollsServiceTests", "RollsServiceTests\RollsServiceTests.csproj", "{6C513236-82C4-4991-8376-2F71DE569E30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RollsServiceTests", "RollsServiceTests\RollsServiceTests.csproj", "{6C513236-82C4-4991-8376-2F71DE569E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPIService", "VPIService\VPIService.csproj", "{048D7AB8-1BEA-43D0-AAAD-BC172BFD109E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,12 @@ Global
 		{6C513236-82C4-4991-8376-2F71DE569E30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C513236-82C4-4991-8376-2F71DE569E30}.Release|x64.ActiveCfg = Release|Any CPU
 		{6C513236-82C4-4991-8376-2F71DE569E30}.Release|x64.Build.0 = Release|Any CPU
+		{048D7AB8-1BEA-43D0-AAAD-BC172BFD109E}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{048D7AB8-1BEA-43D0-AAAD-BC172BFD109E}.Debug|x64.ActiveCfg = Debug|x64
+		{048D7AB8-1BEA-43D0-AAAD-BC172BFD109E}.Debug|x64.Build.0 = Debug|x64
+		{048D7AB8-1BEA-43D0-AAAD-BC172BFD109E}.Release|Any CPU.ActiveCfg = Release|x64
+		{048D7AB8-1BEA-43D0-AAAD-BC172BFD109E}.Release|x64.ActiveCfg = Release|x64
+		{048D7AB8-1BEA-43D0-AAAD-BC172BFD109E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -38,6 +38,7 @@
     <ProjectReference Include="..\AuthenticatieService\AuthenticatieService.csproj" />
     <ProjectReference Include="..\LicentieService\LicentieService.csproj" />
     <ProjectReference Include="..\RollsService\RollsService.csproj" />
+    <ProjectReference Include="..\VPIService\VPIService.csproj" />
   </ItemGroup>
 
 </Project>
